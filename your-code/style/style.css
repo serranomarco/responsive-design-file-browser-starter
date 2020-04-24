@@ -1,0 +1,109 @@
+.overlay{
+    background-color: rgba(0,0,0,0.6);
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+
+}
+
+.overlay--hidden{
+    display: none;
+}
+
+body {
+  display: flex;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  line-height: 1em;
+}
+
+.tree-section {
+  box-sizing: border-box;
+  padding: 1em;
+  width: 400px;
+}
+
+.tree-entry{
+    display: grid;
+    grid-template-columns: 12px 20px 1fr auto;
+    align-items: center;
+
+    /* height: 50px; */
+    padding-left: .25em 0;
+}
+
+.tree-entry__icon{
+    width: 20px;
+    height: 20px;
+}
+
+
+
+.tree--nested {
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
+
+.tree-entry__disclosure--closed {
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+
+    border-left: 6px solid gray;
+  }
+
+  .tree-entry__disclosure--opened {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+
+    border-top: 6px solid gray;
+  }
+
+.button{
+    margin-left: 10px;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: rgb(117, 117, 175);
+    padding: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.button:disabled{
+    background-color: grey;
+    color: black
+}
+
+
+@media screen and (max-width: 720px) {
+  .text-box {
+    background-color: white;
+    bottom: 0;
+    box-shadow: 4px 0 4px rgba(0, 0, 0, .3);
+    left: 0;
+    margin-left: -110vw;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: margin-left .5s;
+    width: 100%;
+  }
+
+  .text-box--show {
+    margin-left: 0;
+  }
+
+  .tree-section{
+    width: auto;
+  }
+
+  main {
+    display: block;
+  }
+}
